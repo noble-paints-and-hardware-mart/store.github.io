@@ -280,4 +280,32 @@ footer {
     .hero-content h1 { font-size: 2rem; }
     .categories-section { padding: 50px 5%; }
 }
+/* --- THE 10% ACCENT COLOR (60-30-10 RULE) --- */
+:root {
+    --accent-orange: #D35400; /* Burnt Orange for buttons and links */
+}
+
+/* Update main buttons to Burnt Orange */
+.btn-primary, .contact-btn {
+    background-color: var(--accent-orange) !important;
+    color: #ffffff !important; 
+    border: none;
+}
+
+/* Make buttons slightly darker orange when hovering */
+.btn-primary:hover, .contact-btn:hover {
+    background-color: #A04000 !important; 
+    transform: translateY(-2px);
+}
+
+/* Make top menu links turn orange when hovering instead of just fading */
+.desktop-menu a:hover {
+    color: var(--accent-orange) !important;
+    opacity: 1;
+}
+
+/* Make social media text links on contact page turn orange on hover */
+.info-block p a:hover {
+    color: var(--accent-orange) !important;
+}
 
