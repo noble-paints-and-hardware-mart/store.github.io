@@ -280,16 +280,17 @@ footer {
     .hero-content h1 { font-size: 2rem; }
     .categories-section { padding: 50px 5%; }
     
-    /* Forces 2 categories per row side-by-side */
+    /* OVERRIDING THE GRID FOR MOBILE - Forces 2 columns */
     .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px; /* Slightly smaller gap to fit screens perfectly */
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important; 
     }
     
-    /* Adjusts the text size to fit the new side-by-side layout */
+    /* Adjusting text so it fits neatly in smaller boxes */
     .category-card h3 {
-        padding: 12px 5px;
-        font-size: 0.95rem;
+        padding: 12px 5px !important;
+        font-size: 0.95rem !important;
     }
 }
 /* --- THE 10% ACCENT COLOR (60-30-10 RULE) --- */
