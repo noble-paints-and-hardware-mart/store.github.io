@@ -209,7 +209,7 @@ header {
 
 .card-img-wrapper {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 1 / 1; /* This forces a perfect 1:1 square ratio */
     overflow: hidden;
     background-color: #eaeaea; /* Placeholder color before image loads */
 }
