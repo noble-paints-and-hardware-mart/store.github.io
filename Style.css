@@ -47,12 +47,28 @@ header {
     margin: 0 auto;
 }
 
-.logo img {
-    height: 60px; /* Adjust based on exact logo dimensions */
-    background-color: var(--cream); /* Box behind logo if transparent */
-    border-radius: 5px;
-    padding: 5px;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
 }
+
+.logo img {
+    height: 55px; 
+    background-color: var(--cream); 
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.logo-text {
+    color: var(--cream);
+    font-family: var(--font-classic);
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
 
 .desktop-menu ul {
     display: flex;
