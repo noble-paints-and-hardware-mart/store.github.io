@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paints & Coatings | Noble Paints & Hardware Mart</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #1a202c;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin-bottom: 10px;
+        }
+        .back-link {
+            color: #cbd5e0;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        /* Category Section Headers */
+        .category-section {
+            margin-bottom: 50px;
+        }
+        .category-title {
+            font-size: 28px;
+            color: #1a202c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        /* 2-Column Grid Structure */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        /* Mobile adjustment for smaller screens */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Image styling with zoom pointer */
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #e2e8f0;
+            cursor: zoom-in;
+        }
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .product-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+        .product-desc {
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+        .btn {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #fff;
+            font-size: 14px;
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1ebe57;
+        }
+        .btn-call {
+            background-color: #3182ce;
+        }
+        .btn-call:hover {
+            background-color: #2b6cb0;
+        }
+
+        /* Lightbox (Image Zoom) CSS */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #cbd5e0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Paints & Coatings</h1>
+        <a href="index.html" class="back-link">← Back to Noble Paints & Hardware Mart</a>
+    </header>
+
+    <div class="container">
+
+        <!-- INTERIOR PAINTS SECTION -->
+        <div class="category-section">
+            <h2 class="category-title">Interior Paints</h2>
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <img src="tractor-sparc.jpg" alt="Tractor Sparc" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Tractor Sparc</h3>
+                        <p class="product-desc">An economical interior distemper providing a smooth, clean finish for indoor walls. Perfect for budget-friendly refreshing of living spaces.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Tractor%20sparc?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="tractor-emulsion.jpg" alt="Tractor Emulsion" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Tractor Emulsion</h3>
+                        <p class="product-desc">A smart upgrade from distemper, offering a smooth matt finish and excellent coverage that keeps interior walls looking fresh.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Tractor%20emulsion?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="tractor-shyne.button.jpg" alt="Tractor Shyne" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Tractor Shyne</h3>
+                        <p class="product-desc">Delivers a rich, soft sheen finish to interior walls, providing increased washability and a premium look at an accessible price.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Tractor%20shyne?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="apcolite-premium.jpg" alt="Apcolite Premium Emulsion" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Apcolite Premium Emulsion</h3>
+                        <p class="product-desc">A highly durable interior paint known for its rich matt finish and stain-resistant properties. Keeps your home looking flawless for years.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Apcolite%20premium%20emulsion?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="royal-luxury.jpg" alt="Royal Luxury" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Royal Luxury</h3>
+                        <p class="product-desc">The ultimate luxurious finish with a soft, glowing sheen. Designed to be highly washable, keeping the finest interiors perfectly pristine.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Royal%20luxury?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="royal-matt.jpg" alt="Royal Matt" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Royal Matt</h3>
+                        <p class="product-desc">Provides a completely smooth, dead-flat finish that elegantly hides surface imperfections while maintaining top-tier durability and washability.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Royal%20matt?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- EXTERIOR PAINTS SECTION -->
+        <div class="category-section">
+            <h2 class="category-title">Exterior Paints</h2>
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <img src="ace-sparc.jpg" alt="Ace Sparc" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Ace Sparc</h3>
+                        <p class="product-desc">An entry-level exterior emulsion that provides strong defense against outdoor weather conditions, outperforming standard cement paints.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Ace%20sparc?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="ace-exterior.jpg" alt="Ace Exterior Emulsion" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Ace Exterior Emulsion</h3>
+                        <p class="product-desc">A highly reliable exterior coating that resists chalking and cracking, keeping your building protected from sun and rain.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Ace%20exterior%20emulsion?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="ace-shyne.jpg" alt="Ace Shyne" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Ace Shyne</h3>
+                        <p class="product-desc">Combines weather protection with a subtle sheen, giving your building's exterior an elegant, long-lasting visual lift.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Ace%20shyne?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="apex-ultima.jpg" alt="Apex Ultima" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Apex Ultima</h3>
+                        <p class="product-desc">Advanced high-performance exterior emulsion with anti-algal properties, designed to keep external walls vibrant and protected in harsh climates.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Apex%20ultima?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="apex-weather-proof.jpg" alt="Apex Weather Proof" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Apex Weather Proof</h3>
+                        <p class="product-desc">The standard for superior weather protection, preventing water penetration and resisting dust accumulation on exterior facades.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Apex%20weather%20proof?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- OIL PAINTS SECTION -->
+        <div class="category-section">
+            <h2 class="category-title">Oil Paints</h2>
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <img src="apcolite-gloss-enamel.jpg" alt="Apcolite Premium Gloss Enamel" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Apcolite Premium Gloss Enamel</h3>
+                        <p class="product-desc">A highly durable, mirror-like gloss finish for wood and metal surfaces. Extremely tough against stains and daily wear.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Apcolite%20premium%20gloss%20enamel?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PRIMERS SECTION -->
+        <div class="category-section">
+            <h2 class="category-title">Primers</h2>
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <img src="water-base-interior-primer.jpg" alt="Water Base Interior Primer" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Water Base Interior Primer</h3>
+                        <p class="product-desc">An essential undercoat that seals interior walls, providing a smooth base that increases topcoat adhesion and reduces paint usage.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Water%20base%20interior%20primer?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="exterior-primer.jpg" alt="Exterior Primer" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Exterior Primer</h3>
+                        <p class="product-desc">Specially formulated to withstand outdoor conditions, preventing moisture seepage and ensuring exterior paint lasts significantly longer.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Exterior%20primer?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="oil-base-primer.jpg" alt="Oil Base Primer" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Oil Base Primer</h3>
+                        <p class="product-desc">A heavy-duty primer that blocks tough stains, seals porous surfaces, and provides exceptional grip for enamel paints on wood and metal.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Oil%20base%20primer?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- WATERPROOFING SECTION -->
+        <div class="category-section">
+            <h2 class="category-title">Waterproofing</h2>
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <img src="dampproof.jpg" alt="Dampproof" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Dampproof</h3>
+                        <p class="product-desc">A heavy-duty elastomeric coating that permanently seals terraces and walls against severe moisture, preventing dampness and leakage indoors.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Dampproof?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- COATINGS SECTION -->
+        <div class="category-section">
+            <h2 class="category-title">Coatings</h2>
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <img src="acrylic-wall-putty.jpg" alt="Acrylic Wall Putty" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Acrylic Wall Putty</h3>
+                        <p class="product-desc">A ready-to-use putty that fills dents and holes on masonry surfaces, creating an ultra-smooth finish prior to primer application.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Acrylic%20wall%20putty?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="asian-exterior-putty.jpg" alt="Asian Paints Exterior Wall Putty" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Asian Paints Exterior Wall Putty</h3>
+                        <p class="product-desc">A water-resistant white cement-based putty that creates a strong, protective, and even base for exterior emulsion paints.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Asian%20paints%20exterior%20wall%20putty?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- VARNISHES SECTION -->
+        <div class="category-section">
+            <h2 class="category-title">Varnishes</h2>
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <img src="clear-varnish.jpg" alt="Clear Varnish" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Clear Varnish</h3>
+                        <p class="product-desc">Enhances the natural grain of interior wood. Provides a transparent, glossy protective layer against minor scratches and stains.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Clear%20varnish?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="touchwood-polish.jpg" alt="Touchwood Polish" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Touchwood Polish</h3>
+                        <p class="product-desc">A specialized, highly durable wood coating that preserves the look and structural integrity of both indoor and outdoor wooden furniture.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Touchwood%20polish?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="melamine-polish.jpg" alt="Melamine" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Melamine</h3>
+                        <p class="product-desc">A professional-grade, two-component coating system known for giving wooden furniture a hard, heat-resistant, and visually stunning finish.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Melamine?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="pu-polish.jpg" alt="PU (Polyurethane)" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">PU</h3>
+                        <p class="product-desc">Premium polyurethane wood coating offering the highest level of resistance to water, heat, and scratches, available in high-gloss or matte.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20PU?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- BRUSHES & PAINTROLLERS SECTION -->
+        <div class="category-section">
+            <h2 class="category-title">Brushes & Paintrollers</h2>
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <img src="interior-paintroller.jpg" alt="Interior Paintroller" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Interior Paintroller</h3>
+                        <p class="product-desc">Designed with short to medium nap materials to provide a flawless, smooth application without leaving lint on interior walls.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Interior%20paintroller?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="exterior-paintroller.jpg" alt="Exterior Paintroller" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Exterior Paintroller</h3>
+                        <p class="product-desc">A heavy-duty, thick-nap roller built specifically to hold more paint and easily cover textured or rough exterior masonry surfaces.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Exterior%20paintroller?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="paint-brushes.jpg" alt="Brushes" class="product-image" onclick="openModal(this.src)">
+                    <div class="product-info">
+                        <h3 class="product-title">Brushes</h3>
+                        <p class="product-desc">High-quality synthetic and natural bristle brushes available in multiple sizes, perfect for cutting in corners and detailed woodwork.</p>
+                        <div class="button-group">
+                            <a href="https://wa.me/916352444352?text=Can%20I%20get%20more%20info%20about%20Brushes?" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                            <a href="tel:+916352444352" class="btn btn-call">Call Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Image Zoom Lightbox Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="zoomedImage">
+    </div>
+
+    <script>
+        // JavaScript for Image Zoom Lightbox
+        function openModal(imageSrc) {
+            document.getElementById("imageModal").style.display = "flex";
+            document.getElementById("zoomedImage").src = imageSrc;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
